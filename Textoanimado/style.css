@@ -1,0 +1,96 @@
+* {
+    margin: 30px;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit' sans-serif;
+}
+
+body {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center, left;
+    background-color: #212121;
+    color: #fff;
+}
+
+.texto-animado {
+    font-size: 49px;
+    font-weight: 300;
+}
+
+.texto-animado span {
+    position: relative;
+}
+
+.texto-animado span::before {
+    content: "";
+    color: red;
+    animation: palavras 25s infinite;
+}
+
+.texto-animado span::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid red;
+    right: -10px;
+    animation: cursor .8s infinite, digitar 25s steps(15) infinite;
+    width: calc(100% + 18px);
+    background-color: #212121;
+}
+
+@keyframes digitar {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes cursor {
+    0% {
+        border-left: 3px solid #212121;
+    }
+}
+
+@keyframes palavras {
+    0%,
+    20% {
+        content: "eventos corporativos";
+    }
+    21%,
+    40% {
+        content: "eventos esportivos";
+    }
+    41%,
+    60% {
+        content: "shows";
+    }
+    61%,
+    80% {
+        content: "fotos de casamentos";
+    }
+    81%,
+    100% {
+        content: "fotos publicitarias";
+    }
+}
